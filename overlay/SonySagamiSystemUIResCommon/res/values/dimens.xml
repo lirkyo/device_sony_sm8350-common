@@ -24,4 +24,10 @@
          burn-in on status bar and navigation bar. -->
     <dimen name="horizontal_max_shift">4.0dp</dimen>
 
+    <dimen name="rounded_corner_radius">1dp</dimen>
+    <dimen name="rounded_corner_radius_top">0dp</dimen>
+    <dimen name="rounded_corner_radius_bottom">0dp</dimen>
+    <dimen name="recents_task_view_rounded_corners_radius">1dp</dimen>
+    <dimen name="recents_task_view_shadow_rounded_corners_radius">1dp</dimen>
+
 </resources>
