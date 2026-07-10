@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string-array name="vendor_cross_profile_apps">
+        <item>org.fcitx.fcitx5.android</item>
+        <item>com.xiaomi.xmsf</item>
+    </string-array>
+</resources>

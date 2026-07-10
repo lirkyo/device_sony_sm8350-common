@@ -339,4 +339,23 @@
         <name>vendor.semc.hardware.extlight</name>
         <fqname>IExtLight/default</fqname>
     </hal>
+    <hal format="hidl">
+        <name>vendor.nxp.nxpese</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>INxpEse</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.somc.hardware.ifaa</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IIFAAManagerService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IIFAAManagerService/default</fqname>
+    </hal>
 </manifest>

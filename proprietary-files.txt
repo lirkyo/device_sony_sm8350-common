@@ -212,7 +212,6 @@ vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioparsers.so
-vendor/lib/libdiag.so
 vendor/lib/libhdmipassthru.so
 vendor/lib/libqtigef.so
 vendor/lib/soundfx/libasphere.so
@@ -710,6 +709,7 @@ vendor/firmware/CAMERA_ICP.elf
 vendor/firmware/CAMERA_ICP_170.elf
 
 # Charger
+vendor/bin/hvdcp_opti
 vendor/bin/init.qti.chg_policy.sh
 vendor/etc/charger_fstab.qti
 vendor/etc/charger_fw_fstab.qti
@@ -757,6 +757,7 @@ vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
 vendor/lib/libGPreqcancel.so
 vendor/lib/libGPreqcancel_svc.so
 vendor/lib/libQSEEComAPI.so
+vendor/lib/libcpion.so
 vendor/lib/libcppf.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
@@ -788,6 +789,8 @@ system_ext/lib/vendor.qti.diaghal@1.0.so
 system_ext/lib64/vendor.qti.diaghal@1.0.so
 vendor/bin/diag-router
 vendor/etc/init/vendor.qti.diag.rc
+vendor/lib/libdiag.so
+vendor/lib64/libdiag.so
 vendor/lib/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.diaghal@1.0.so;MODULE_SUFFIX=_vendor
 
@@ -864,6 +867,11 @@ vendor/lib64/vendor.display.color@1.4.so
 vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
+# Display config
+vendor/etc/displayconfig/display_id_130.xml
+vendor/lib/libdisplayconfig.qti.so
+vendor/lib64/libdisplayconfig.qti.so
+
 # ESE
 vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
 vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc
@@ -885,8 +893,14 @@ vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 # Fingerprint firmware
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-rbs
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-rbs.rc
+vendor/etc/permissions/qti_fingerprint_interface.xml
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/libRbsFlow.so
 vendor/lib64/libets_teeclient_v2.so
+
+# Input
+vendor/usr/idc/sec_touchscreen.idc
 
 # GNSS
 vendor/app/CACertService/CACertService.apk
@@ -943,7 +957,6 @@ vendor/lib64/liblocationservice.so
 vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libminksocket.so
 vendor/lib64/libqcc_file_agent.so
 vendor/lib64/libqdma_file_agent.so
 vendor/lib64/libslimclient.so
@@ -1042,7 +1055,18 @@ system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 system_ext/etc/permissions/vendor.qti.ims.rcsservice.xml
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
+system_ext/framework/vendor.qti.ims.connection-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V1.1-java.jar
 system_ext/framework/vendor.qti.ims.factory-V2.0-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.1-java.jar
+system_ext/framework/vendor.qti.ims.factory-V2.2-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.1-java.jar
+system_ext/framework/vendor.qti.ims.rcssip-V1.2-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.1-java.jar
+system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar
 system_ext/lib/libimsmedia_jni.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so
 system_ext/lib64/com.qualcomm.qti.imscmservice@2.0.so
@@ -1125,6 +1149,8 @@ vendor/bin/vendor_modprobe.sh
 vendor/etc/init/hw/init.qti.kernel.rc
 
 # Keymaster
+vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+vendor/bin/hw/android.hardware.keymaster@4.0-strongbox-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
 vendor/bin/keymasterd
 vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc
@@ -1213,6 +1239,16 @@ vendor/lib64/libstagefright_soft_qtiflacdec.so
 vendor/bin/mlog_qmi_service
 vendor/etc/init/mlog_qmi_service.rc
 
+# Native public libraries
+vendor/etc/public.libraries.txt
+
+# NFC
+vendor/lib/jcos_client.so
+vendor/lib/se_extn_client.so
+vendor/lib64/jcos_client.so
+vendor/lib64/se_extn_client.so
+vendor/lib64/vendor.somc.hardware.nfc@1.0.so
+
 # NFC Firmware
 vendor/lib64/libsn100u_fw.so
 
@@ -1294,7 +1330,6 @@ vendor/lib/libidl.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
-vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
@@ -1363,12 +1398,14 @@ vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.tftp.rc
 vendor/etc/qcril_database/qcrilNr.db
 vendor/etc/qcril_database/upgrade/config/10.0_config.sql
+vendor/etc/qcril_database/upgrade/config/12.0_config.sql
 vendor/etc/qcril_database/upgrade/config/6.0_config.sql
 vendor/etc/qcril_database/upgrade/config/7.0_config.sql
 vendor/etc/qcril_database/upgrade/config/8.0_config.sql
 vendor/etc/qcril_database/upgrade/config/9.0_config.sql
 vendor/etc/qcril_database/upgrade/other/0_initial_qcrilnr.sql
 vendor/etc/qcril_database/upgrade/other/10_version_update_ecc_table.sql
+vendor/etc/qcril_database/upgrade/other/12_version_update_ecc_table.sql
 vendor/etc/qcril_database/upgrade/other/1_version_intro_qcrilnr.sql
 vendor/etc/qcril_database/upgrade/other/2_version_add_wps_config_qcrilnr.sql
 vendor/etc/qcril_database/upgrade/other/3_version_update_wps_config_qcrilnr.sql
@@ -1406,7 +1443,6 @@ vendor/lib64/libqcrildatactl.so
 vendor/lib64/libqrtr.so
 vendor/lib64/libqrtrclient.so
 vendor/lib64/libqsocket.so
-vendor/lib64/libtrustedapploader.so
 vendor/lib64/libril-db.so
 vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-radioconfig.so
@@ -1760,13 +1796,19 @@ vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
 
 # Soter
+vendor/bin/vendor.qti.hardware.soter@1.0-provision
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib/vendor.qti.hardware.soter@1.0.so
+vendor/lib/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
 # TA
+odm/bin/taimport_vendor
+odm/etc/init/taimport_vendor.rc
+system_ext/etc/permissions/jp.co.sony.mc.misctasdklibrary.xml
+system_ext/framework/jp.co.sony.mc.misctasdklibrary.jar
 vendor/bin/hw/vendor.somc.hardware.aidlmiscta-service.somc
 vendor/etc/init/vendor.somc.hardware.aidlmiscta-somc.rc
 vendor/lib64/vendor.somc.hardware.aidlmiscta-V1-ndk_platform.so
@@ -1780,6 +1822,7 @@ vendor/lib64/libta.so
 vendor/bin/tad
 
 # Thermal engine
+oem/etc/thermal-engine.conf:odm/etc/thermal-engine.conf
 vendor/bin/thermal-engine
 vendor/etc/init/init_thermal-engine.rc
 vendor/lib64/liblights-core.so
@@ -1946,14 +1989,19 @@ vendor/bin/wvkbd
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/lib/libhdcprx_module.so
+vendor/lib/libhdcpsrm.so
 vendor/lib/libhdcptx_module.so
+vendor/lib/libminksocket.so
 vendor/lib/liboemcrypto.so
+vendor/lib/libtrustedapploader.so
 vendor/lib/libwvhidl.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libhdcprx_module.so
 vendor/lib64/libhdcpsrm.so
 vendor/lib64/libhdcptx_module.so
+vendor/lib64/libminksocket.so
 vendor/lib64/liboemcrypto.so
+vendor/lib64/libtrustedapploader.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
@@ -1969,3 +2017,40 @@ vendor/firmware/tzhdcp.b07
 vendor/firmware/tzhdcp.mdt
 vendor/firmware/tzwidevine.mbn
 vendor/firmware/tzwvcpybuf.mbn
+
+# IFAA
+system_ext/etc/permissions/org.ifaa.android.manager.xml
+system_ext/framework/org.ifaa.android.manager.jar
+system_ext/lib/libifaateeclientjni.sony.so
+system_ext/lib/vendor.somc.hardware.ifaa@1.0.so
+system_ext/lib64/libifaateeclientjni.sony.so
+system_ext/lib64/vendor.somc.hardware.ifaa@1.0.so
+vendor/bin/hw/vendor.semc.hardware.ifaa@1.0-service
+vendor/etc/init/vendor.semc.hardware.ifaa@1.0-service.rc
+vendor/lib64/vendor.somc.hardware.ifaa@1.0.so;MODULE_SUFFIX=_vendor
+
+vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
+vendor/bin/StoreKeybox
+vendor/bin/TrustedUISampleTest
+vendor/bin/hw/vendor.qti.hardware.trustedui@1.0-service-qti
+vendor/etc/init/vendor.qti.hardware.trustedui@1.0-service-qti.rc
+vendor/lib/libsi.so
+vendor/lib/libTouchInputVM.so
+vendor/lib/libTrustedInput.so
+vendor/lib/libTrustedInputTZ.so
+vendor/lib/libTrustedUI.so
+vendor/lib/libTrustedUITZ.so
+vendor/lib/libTrustedUIVM.so
+vendor/lib/vendor.qti.hardware.trustedui@1.0.so
+vendor/lib/vendor.qti.hardware.trustedui@1.1.so
+vendor/lib/vendor.qti.hardware.trustedui@1.2.so
+vendor/lib64/libsi.so
+vendor/lib64/libTouchInputVM.so
+vendor/lib64/libTrustedInput.so
+vendor/lib64/libTrustedInputTZ.so
+vendor/lib64/libTrustedUI.so
+vendor/lib64/libTrustedUITZ.so
+vendor/lib64/libTrustedUIVM.so
+vendor/lib64/vendor.qti.hardware.trustedui@1.0.so
+vendor/lib64/vendor.qti.hardware.trustedui@1.1.so
+vendor/lib64/vendor.qti.hardware.trustedui@1.2.so

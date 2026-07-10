@@ -4,3 +4,6 @@ ro.config.vc_call_vol_steps=8
 
 # eBPF
 ro.bpf.kver_override=5.10.239
+
+# SKU
+ro.boot.hardware.sku=pdx215
